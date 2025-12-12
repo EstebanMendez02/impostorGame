@@ -1,0 +1,60 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IMPOSTOR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>JUEGO DEL IMPOSTOR</h1>
+
+    <div id="setup">
+      <label for="numPlayers">Número de jugadores:</label>
+      <input type="number" id="numPlayers" min="3" max="20" value="5" />
+
+      <label for="numImpostors">Número de impostores:</label>
+      <input type="number" id="numImpostors" min="1" max="5" value="1" />
+
+      <label for="category">Categoría:</label>
+      <select id="category">
+        <option value="random">Aleatoria</option>
+        <option value="objetos">Objetos</option>
+        <option value="lugares">Lugares</option>
+        <option value="animales">Animales</option>
+        <option value="personajes">Personajes de Disney</option>
+        <option value="custom">Ingresar palabra</option>
+      </select>
+      <div id="customWordContainer" class="hidden">
+        <label for="customWord">Escribe tu palabra secreta:</label>
+        <input type="text" id="customWord" placeholder="Escribe la palabra, prro" />
+      </div>
+
+      <br>
+
+      <button onclick="startGame()">Iniciar juego</button>
+    </div>
+
+    <div id="game" class="hidden">
+      <p id="playerInfo"></p>
+      <button onclick="nextPlayer()">Ver mi rol</button>
+    </div>
+
+    <div id="reveal" class="hidden">
+      <p id="roleReveal"></p>
+      <button onclick="showNextPlayer()">Siguiente jugador</button>
+    </div>
+  </div>
+
+  <div id="noWordsLeft" class="hidden">
+    <h2>¡Ups! 😮</h2>
+    <p>Ya no quedan palabras disponibles en esta categoría.</p>
+    <p>Recarga la página para empezar desde cero.</p>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
